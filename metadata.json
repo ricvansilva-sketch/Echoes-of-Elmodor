@@ -1,0 +1,6 @@
+{
+  "name": "Echoes of Elmodor — Ruined Watchtower",
+  "description": "A hand-painted isometric tactical RPG set around the ruined highland watchtower of Elmodor, featuring a 30x30 elevation-driven battlefield, radial action wheel, turn-order ribbon, and target duel forecast.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

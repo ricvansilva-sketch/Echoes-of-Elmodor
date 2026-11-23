@@ -1,0 +1,281 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cinzel', Georgia, serif;
+    --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: var(--font-sans);
+    background-color: #0d0f12;
+    color: #e7e2d8;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Minimalist translucent dark-fantasy veil — lightweight etched brass hairlines (zero backdrop-filter stall) */
+.fantasy-veil {
+  background: linear-gradient(180deg, rgba(12, 15, 22, 0.84) 0%, rgba(8, 10, 15, 0.92) 100%);
+  border-top: 1px solid rgba(212, 174, 106, 0.44);
+  border-bottom: 1px solid rgba(212, 174, 106, 0.26);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.48);
+}
+
+.fantasy-veil-crimson {
+  background: linear-gradient(180deg, rgba(24, 13, 16, 0.86) 0%, rgba(12, 9, 12, 0.94) 100%);
+  border-top: 1px solid rgba(212, 86, 82, 0.52);
+  border-bottom: 1px solid rgba(212, 86, 82, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.52);
+}
+
+.iron-plaque {
+  background: linear-gradient(180deg, rgba(18, 21, 28, 0.9) 0%, rgba(11, 13, 18, 0.95) 100%);
+  border: 1px solid rgba(204, 166, 98, 0.38);
+  box-shadow:
+    inset 0 1px 0 rgba(245, 224, 184, 0.12),
+    0 16px 42px rgba(0, 0, 0, 0.58);
+}
+
+.iron-plaque-crimson {
+  background: linear-gradient(180deg, rgba(28, 16, 19, 0.9) 0%, rgba(15, 10, 13, 0.95) 100%);
+  border: 1px solid rgba(196, 76, 76, 0.44);
+  box-shadow:
+    inset 0 1px 0 rgba(240, 160, 160, 0.12),
+    0 16px 42px rgba(0, 0, 0, 0.58);
+}
+
+/* Chamfered dark-fantasy medallion clip */
+.chamfer-crest {
+  clip-path: polygon(
+    9px 0%,
+    calc(100% - 9px) 0%,
+    100% 9px,
+    100% calc(100% - 9px),
+    calc(100% - 9px) 100%,
+    9px 100%,
+    0% calc(100% - 9px),
+    0% 9px
+  );
+}
+
+/* Living Animated Portrait Motion (GPU compositor-only transforms & opacity) */
+@keyframes portraitBreathe {
+  0%,
+  100% {
+    transform: scale(1.04) translate3d(0px, 0px, 0);
+  }
+  50% {
+    transform: scale(1.085) translate3d(0px, -2.5px, 0);
+  }
+}
+
+@keyframes portraitSway {
+  0%,
+  100% {
+    transform: scale(1.03) translate3d(-1.5px, 0px, 0);
+  }
+  50% {
+    transform: scale(1.065) translate3d(1.5px, -3px, 0);
+  }
+}
+
+@keyframes emberDrift {
+  0% {
+    transform: translate3d(0, 18px, 0) scale(0.75);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate3d(10px, -46px, 0) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes portraitGlint {
+  0%,
+  72% {
+    transform: translateX(-140%) skewX(-24deg);
+    opacity: 0;
+  }
+  84% {
+    opacity: 0.28;
+  }
+  100% {
+    transform: translateX(180%) skewX(-24deg);
+    opacity: 0;
+  }
+}
+
+@keyframes mistDrift {
+  0%,
+  100% {
+    transform: translate3d(-6%, 0, 0);
+    opacity: 0.34;
+  }
+  50% {
+    transform: translate3d(6%, -4%, 0);
+    opacity: 0.56;
+  }
+}
+
+/* Kinetic Glamour Cut-In Animations — crisp finite bursts for speed & impact */
+@keyframes glamourSlam {
+  0% {
+    opacity: 0;
+    transform: scale(1.12) translate3d(-44px, 12px, 0) skewX(-3deg);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(0.99) translate3d(6px, -2px, 0) skewX(0.6deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0) skewX(0deg);
+  }
+}
+
+@keyframes impactJolt {
+  0% {
+    opacity: 0;
+    transform: scale(1.16) translate3d(42px, -10px, 0);
+  }
+  26% {
+    opacity: 1;
+    transform: scale(1.03) translate3d(-18px, 6px, 0) rotate(-1.1deg);
+  }
+  48% {
+    transform: scale(1.01) translate3d(10px, -4px, 0) rotate(0.7deg);
+  }
+  70% {
+    transform: scale(1) translate3d(-5px, 2px, 0) rotate(-0.3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes impactFlash {
+  0% {
+    opacity: 0.72;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dockSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(14px, 8px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes duelCameraBreathe {
+  0%,
+  100% {
+    transform: scale(1.015) translate3d(0px, 0px, 0);
+  }
+  50% {
+    transform: scale(1.04) translate3d(-5px, -3px, 0);
+  }
+}
+
+@keyframes speedlineRush {
+  0% {
+    transform: translate3d(-14%, 0, 0);
+    opacity: 0.72;
+  }
+  100% {
+    transform: translate3d(4%, 0, 0);
+    opacity: 0.36;
+  }
+}
+
+.animate-portrait-breathe {
+  animation: portraitBreathe 5.2s ease-in-out infinite;
+}
+
+.animate-portrait-sway {
+  animation: portraitSway 6.6s ease-in-out infinite;
+}
+
+.animate-ember-drift {
+  animation: emberDrift 3.6s ease-out infinite;
+}
+
+.animate-portrait-glint {
+  animation: portraitGlint 6.5s ease-in-out infinite;
+}
+
+.animate-mist-drift {
+  animation: mistDrift 7.2s ease-in-out infinite;
+}
+
+.animate-glamour-slam {
+  animation: glamourSlam 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-impact-jolt {
+  animation: impactJolt 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-impact-flash {
+  animation: impactFlash 320ms ease-out both;
+}
+
+.animate-dock-in {
+  animation: dockSlideIn 190ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-duel-breathe {
+  animation: duelCameraBreathe 9s ease-in-out infinite;
+}
+
+.animate-speedline-rush {
+  animation: speedlineRush 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-portrait-breathe,
+  .animate-portrait-sway,
+  .animate-ember-drift,
+  .animate-portrait-glint,
+  .animate-mist-drift,
+  .animate-glamour-slam,
+  .animate-impact-jolt,
+  .animate-impact-flash,
+  .animate-dock-in,
+  .animate-duel-breathe,
+  .animate-speedline-rush {
+    animation: none;
+  }
+}
